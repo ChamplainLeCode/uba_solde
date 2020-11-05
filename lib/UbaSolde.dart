@@ -49,7 +49,7 @@ class UbaSolde extends StatelessWidget {
                         Container(
                             width: 100,
                             child: Text(
-                              'COMPTES EPAGNES SUR LIVRET',
+                              'COMPTES EPARGNE SUR LIVRET',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 12,
@@ -225,18 +225,19 @@ class UbaSolde extends StatelessWidget {
         navigationBar: CupertinoNavigationBar(
           previousPageTitle: 'Back',
           actionsForegroundColor: Colors.white,
-
-          middle: Text('Informations sur le compte',
+          middle: Text(
+            'Informations sur le compte',
             style: TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.w400
-            ),
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w400),
           ),
-          trailing: Icon(Icons.home, color: Colors.white, size: 20,),
+          trailing: Icon(
+            Icons.home,
+            color: Colors.white,
+            size: 20,
+          ),
         )
         //UbaAppBar());
-    );
+        );
   }
 }
 
@@ -253,9 +254,7 @@ class UbaAppBar extends StatelessWidget
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CupertinoNavigationBarBackButton(
-                previousPageTitle: 'Back',
-                color: Colors.white
-              ),
+                  previousPageTitle: 'Back', color: Colors.white),
               Padding(
                   padding: EdgeInsets.only(right: 30),
                   child: Text('Informations sur le compte',
