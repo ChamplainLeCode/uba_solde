@@ -8,7 +8,7 @@ class UbaSolde extends StatelessWidget {
     return CupertinoPageScaffold(
         child: SingleChildScrollView(
             child: Container(
-                height: 367,
+                height: 380,
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -20,15 +20,16 @@ class UbaSolde extends StatelessWidget {
                       'N° de Compte',
                       style: TextStyle(
                           color: Color(0xFFE32F3A),
-                          fontSize: 12,
+                          //fontSize: 12,
                           fontWeight: FontWeight.w500),
                     )),
                     SizedBox(height: 10),
                     Text(
                       '10005-00001-064016611001-40',
                       style: TextStyle(
+                        //fontSize: 15,
                         fontSize: 15,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w700,
                         color: Color(0xFF090909),
                       ),
                     ),
@@ -40,7 +41,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'Type de compte',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: Color(0xFF090909),
                               ),
                             )),
@@ -50,8 +51,8 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'COMPTES EPAGNES SUR LIVRET',
                               style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 11,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -69,7 +70,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'Solde disponible',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: Color(0xFF090909),
                               ),
                             )),
@@ -79,8 +80,8 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               solde,
                               style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 11,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -98,7 +99,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'Intitulé',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: Color(0xFF090909),
                               ),
                             )),
@@ -108,7 +109,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'DIKAM SUZANNE CHARLENNE',
                               style: TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 11,
                                 color: Color(0xFF090909),
                               ),
@@ -127,7 +128,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'Devise',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: Color(0xFF090909),
                               ),
                             )),
@@ -137,7 +138,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'XAF',
                               style: TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 11,
                                 color: Color(0xFF090909),
                               ),
@@ -156,7 +157,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'Date d\'ouverture',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: Color(0xFF090909),
                               ),
                             )),
@@ -166,7 +167,7 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               '2020/1/20',
                               style: TextStyle(
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w700,
                                 fontSize: 11,
                                 color: Color(0xFF090909),
                               ),
@@ -177,7 +178,7 @@ class UbaSolde extends StatelessWidget {
                       height: 2,
                       color: Color(0x80090909),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 15),
                     Container(
                         padding: EdgeInsets.only(left: 5),
                         child: Row(children: [
@@ -194,7 +195,7 @@ class UbaSolde extends StatelessWidget {
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500),
                               )),
-                          Icon(Icons.date_range_rounded,
+                          Icon(Icons.date_range,
                               color: Color(0xFFE32F3A), size: 18)
                         ])),
                     SizedBox(height: 15),
@@ -221,7 +222,21 @@ class UbaSolde extends StatelessWidget {
                     )
                   ],
                 ))),
-        navigationBar: UbaAppBar());
+        navigationBar: CupertinoNavigationBar(
+          previousPageTitle: 'Back',
+          actionsForegroundColor: Colors.white,
+
+          middle: Text('Informations sur le compte',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w400
+            ),
+          ),
+          trailing: Icon(Icons.home, color: Colors.white, size: 20,),
+        )
+        //UbaAppBar());
+    );
   }
 }
 
@@ -237,28 +252,10 @@ class UbaAppBar extends StatelessWidget
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                  onTap: () => Navigator.of(context).pop(),
-                  child: Container(
-                      width: 80,
-                      padding: EdgeInsets.only(),
-                      // color: Colors.pink,
-                      margin: EdgeInsets.only(),
-                      child: Row(children: [
-                        Container(
-                          child: Icon(
-                            Icons.chevron_left_rounded,
-                            size: 35,
-                            color: Colors.white,
-                          ),
-                          width: 25,
-                        ),
-                        Text(
-                          'Back',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w300),
-                        )
-                      ]))),
+              CupertinoNavigationBarBackButton(
+                previousPageTitle: 'Back',
+                color: Colors.white
+              ),
               Padding(
                   padding: EdgeInsets.only(right: 30),
                   child: Text('Informations sur le compte',

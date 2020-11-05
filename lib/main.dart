@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(0xFFE32F3A),
           scaffoldBackgroundColor: Color(0xFFE9EAEF),
           textTheme: CupertinoTextThemeData(
-              primaryColor: Color(0xFF090909),
+              primaryColor: Colors.white,
               textStyle: TextStyle(
                 fontSize: 14,
                 color: Colors.white,
