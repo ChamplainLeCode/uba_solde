@@ -75,7 +75,7 @@ class _MyHomePageState extends State<UbaHome> {
           padding: EdgeInsets.only(top: 100, left: 40, right: 40),
           child: CupertinoTextField(
             controller: controller,
-            keyboardType: TextInputType.number,
+            //keyboardType: TextInputType.number,
             style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
