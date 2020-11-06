@@ -46,7 +46,7 @@ class UbaSolde extends StatelessWidget {
                             )),
                         Expanded(child: Container()),
                         Container(
-                            width: 100,
+                            width: 120,
                             child: Text(
                               'COMPTES EPARGNE SUR LIVRET',
                               style: TextStyle(
@@ -75,7 +75,7 @@ class UbaSolde extends StatelessWidget {
                             )),
                         Expanded(child: Container()),
                         Container(
-                            width: 100,
+                            width: 120,
                             child: Text(
                               solde,
                               style: TextStyle(
@@ -104,12 +104,12 @@ class UbaSolde extends StatelessWidget {
                             )),
                         Expanded(child: Container()),
                         Container(
-                            width: 100,
+                            width: 120,
                             child: Text(
                               'DIKAM SUZANNE CHARLENNE',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 14,
+                                fontSize: 13,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -133,7 +133,7 @@ class UbaSolde extends StatelessWidget {
                             )),
                         Expanded(child: Container()),
                         Container(
-                            width: 100,
+                            width: 120,
                             child: Text(
                               'XAF',
                               style: TextStyle(
@@ -162,7 +162,7 @@ class UbaSolde extends StatelessWidget {
                             )),
                         Expanded(child: Container()),
                         Container(
-                            width: 100,
+                            width: 120,
                             child: Text(
                               '2020/1/20',
                               style: TextStyle(
