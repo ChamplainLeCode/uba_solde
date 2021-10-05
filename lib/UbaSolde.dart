@@ -17,7 +17,11 @@ class UbaSolde extends StatelessWidget {
                     SizedBox(height: 5),
                     Center(
                         child: Text(
-                      'N° de Compte',
+                      (ModalRoute.of(context).settings.arguments
+                                  as Map)[#lang] ==
+                              #en
+                          ? 'Account Number'
+                          : 'N° de Compte',
                       style: TextStyle(
                           color: Color(0xFFE32F3A),
                           fontSize: 16,
@@ -38,8 +42,13 @@ class UbaSolde extends StatelessWidget {
                         Padding(
                             padding: EdgeInsets.only(left: 10, bottom: 20),
                             child: Text(
-                              'Type de compte',
+                              (ModalRoute.of(context).settings.arguments
+                                          as Map)[#lang] ==
+                                      #en
+                                  ? 'Account Type'
+                                  : 'Type de compte',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
                                 fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
@@ -67,8 +76,13 @@ class UbaSolde extends StatelessWidget {
                         Padding(
                             padding: EdgeInsets.only(left: 10),
                             child: Text(
-                              'Solde disponible',
+                              (ModalRoute.of(context).settings.arguments
+                                          as Map)[#lang] ==
+                                      #en
+                                  ? 'Available Balance'
+                                  : 'Solde disponible',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
                                 fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
@@ -96,8 +110,13 @@ class UbaSolde extends StatelessWidget {
                         Padding(
                             padding: EdgeInsets.only(left: 10, bottom: 14),
                             child: Text(
-                              'Intitulé',
+                              (ModalRoute.of(context).settings.arguments
+                                          as Map)[#lang] ==
+                                      #en
+                                  ? 'Account Name'
+                                  : 'Intitulé',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
                                 fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
@@ -105,6 +124,7 @@ class UbaSolde extends StatelessWidget {
                         Expanded(child: Container()),
                         Container(
                             width: 120,
+                            margin: EdgeInsets.only(bottom: 6),
                             child: Text(
                               'DIKAM SUZANNE CHARLENNE',
                               style: TextStyle(
@@ -125,9 +145,14 @@ class UbaSolde extends StatelessWidget {
                         Padding(
                             padding: EdgeInsets.only(left: 10, bottom: 2),
                             child: Text(
-                              'Devise',
+                              (ModalRoute.of(context).settings.arguments
+                                          as Map)[#lang] ==
+                                      #en
+                                  ? 'Currency'
+                                  : 'Devise',
                               style: TextStyle(
                                 fontSize: 15,
+                                fontWeight: FontWeight.bold,
                                 color: Color(0xFF090909),
                               ),
                             )),
@@ -154,8 +179,13 @@ class UbaSolde extends StatelessWidget {
                         Padding(
                             padding: EdgeInsets.only(left: 10, bottom: 2),
                             child: Text(
-                              'Date d\'ouverture',
+                              (ModalRoute.of(context).settings.arguments
+                                          as Map)[#lang] ==
+                                      #en
+                                  ? 'Opening Date'
+                                  : 'Date d\'ouverture',
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
                                 fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
@@ -188,7 +218,11 @@ class UbaSolde extends StatelessWidget {
                                           color: Color(0xFF0205BF),
                                           width: 0.8))),
                               child: Text(
-                                'Historique de compte',
+                                (ModalRoute.of(context).settings.arguments
+                                            as Map)[#lang] ==
+                                        #en
+                                    ? 'Transaction History'
+                                    : 'Historique de compte',
                                 style: TextStyle(
                                     color: Color(0xFF0205BF),
                                     fontSize: 18,
@@ -208,7 +242,11 @@ class UbaSolde extends StatelessWidget {
                                           color: Color(0xFF0205BF),
                                           width: 0.8))),
                               child: Text(
-                                'Les 10 dernières transactions',
+                                (ModalRoute.of(context).settings.arguments
+                                            as Map)[#lang] ==
+                                        #en
+                                    ? 'Last 10 Transactions'
+                                    : 'Les 10 dernières transactions',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     color: Color(0xFF0205BF),
@@ -222,10 +260,16 @@ class UbaSolde extends StatelessWidget {
                   ],
                 ))),
         navigationBar: CupertinoNavigationBar(
-          previousPageTitle: 'Back',
-          actionsForegroundColor: Colors.white,
+          previousPageTitle:
+              (ModalRoute.of(context).settings.arguments as Map)[#lang] == #en
+                  ? 'Back'
+                  : 'Retour',
+
+          // actionsForegroundColor: Colors.white,
           middle: Text(
-            'Informations sur le compte',
+            (ModalRoute.of(context).settings.arguments as Map)[#lang] == #en
+                ? 'Account Details'
+                : 'Informations sur le compte',
             style: TextStyle(
                 color: Colors.white, fontSize: 17, fontWeight: FontWeight.w400),
           ),
@@ -244,6 +288,7 @@ class UbaAppBar extends StatelessWidget
     implements ObstructingPreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
+    print(ModalRoute.of(context).settings.arguments);
     return Container(
         color: Color(0xFFE32F3A),
         height: preferredSize.height + MediaQuery.of(context).padding.top,
@@ -256,7 +301,12 @@ class UbaAppBar extends StatelessWidget
                   previousPageTitle: 'Back', color: Colors.white),
               Padding(
                   padding: EdgeInsets.only(right: 30),
-                  child: Text('Informations sur le compte',
+                  child: Text(
+                      (ModalRoute.of(context).settings.arguments
+                                  as Map)[#lang] ==
+                              #en
+                          ? 'Account Details'
+                          : 'Informations sur le compte',
                       style: TextStyle(
                         fontSize: 14,
                         color: Color(0xFFFCE8E5),

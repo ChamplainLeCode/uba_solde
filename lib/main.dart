@@ -63,6 +63,14 @@ class UbaHome extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<UbaHome> {
+  Symbol _lang = #fr;
+  Function f1, f2;
+
+  void f() {
+    f1(() {});
+    f2(() {});
+  }
+
   TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -85,12 +93,45 @@ class _MyHomePageState extends State<UbaHome> {
                     fontWeight: FontWeight.w500, color: Colors.primaries[0])),
           ),
         ),
-        RaisedButton(
+        SizedBox(height: 20),
+        Material(
+            color: Colors.transparent,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                StatefulBuilder(builder: (_, st) {
+                  f1 = st;
+                  return Radio<Symbol>(
+                      value: #fr,
+                      groupValue: _lang,
+                      onChanged: (_) {
+                        _lang = _;
+                        f();
+                      });
+                }),
+                Text('Fr'),
+                StatefulBuilder(builder: (_, st) {
+                  f2 = st;
+                  return Radio(
+                      value: #en,
+                      groupValue: _lang,
+                      onChanged: (_) {
+                        _lang = _;
+                        f();
+                      });
+                }),
+                Text('En')
+              ],
+            )),
+        ElevatedButton(
             child: Text('Valider'),
             onPressed: () => Navigator.of(context).push(CupertinoPageRoute(
                 builder: (ctx) => UbaSolde(),
                 settings: RouteSettings(
-                    name: 'solde', arguments: {#solde: controller.text}))))
+                    name: 'solde',
+                    arguments: {#solde: controller.text, #lang: _lang}))))
 //                .push('/solde', arguments: {#solde: controller.text}))
       ],
     ))));
