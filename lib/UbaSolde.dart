@@ -60,7 +60,7 @@ class UbaSolde extends StatelessWidget {
                               'COMPTES EPARGNE SUR LIVRET',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 14,
+                                fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -94,7 +94,7 @@ class UbaSolde extends StatelessWidget {
                               solde,
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 14,
+                                fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -125,11 +125,12 @@ class UbaSolde extends StatelessWidget {
                         Container(
                             width: 120,
                             margin: EdgeInsets.only(bottom: 6),
+                            padding: EdgeInsets.only(right: 3),
                             child: Text(
                               'DIKAM SUZANNE CHARLENNE',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 13,
+                                fontSize: 14,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -162,8 +163,8 @@ class UbaSolde extends StatelessWidget {
                             child: Text(
                               'XAF',
                               style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
                                 color: Color(0xFF090909),
                               ),
                             ))
@@ -197,7 +198,7 @@ class UbaSolde extends StatelessWidget {
                               '2020/1/20',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 14,
+                                fontSize: 16,
                                 color: Color(0xFF090909),
                               ),
                             ))
